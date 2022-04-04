@@ -30,6 +30,9 @@ export class RelationshipComponent implements OnInit {
     orderFamily: "",
     sex: ""}];
   selected_sex = ''
+  illNessGroup: any[] = ['Nhóm bệnh ung thư','Nhóm bệnh huyết học' ,'Nhóm bệnh tim mạch','Nhóm bệnh nội thần kinh/tâm thần','Khác'];
+  ill: string [] = ['Ung thư đại tràng','Parkinson','Rối loạn tăng động giảm chú ý','Động kinh','Rối loạn nhịp'];
+  
   constructor() { 
   }
 

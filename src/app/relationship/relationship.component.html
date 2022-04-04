@@ -59,6 +59,36 @@
             </mat-select>
         </mat-form-field>
 
+        <section>
+            <h1>Thông tin sức khỏe</h1>
+            <p>Trong danh sách bên dưới, hãy chọn Bệnh hoặc Tình trạng (nếu có). Sau đó chọn Độ tuổi lúc Chẩn đoán. Bạn có thể lặp lại quá trình này nếu cần.</p>
+            <!-- <button mat-raised-button color="success" (click)="addNewIll()" class="margin-right-10">+</button> -->
+            <div ngFor="let ill of list_of_ill; let ind = index">
+                <mat-form-field class="example-full-width margin-right-40">
+                    <mat-label>Nhóm bệnh</mat-label>
+                    <mat-select >
+                        <mat-option *ngFor="let option of illNessGroup" [value]="option">
+                            {{ option.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field class="example-full-width margin-right-10">
+                    <mat-label>Tên Bệnh</mat-label>
+                    <mat-select >
+                        <mat-option *ngFor="let option of ill" [value]="option">
+                            {{ option }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+    
+                <label class="margin-right-10"> Tuổi lúc chuẩn đoán </label>
+                <mat-form-field class="margin-right-10 width-100">
+                    <input type="text" matInput />
+                </mat-form-field>
+            </div>
+            
+        </section>
     </div>
     <button mat-raised-button color="success" (click)="addNewRelation()" class="margin-right-80">add</button>
     <button mat-raised-button color="warn" (click)="removeRelation()" class="margin-right-20">remove</button>
